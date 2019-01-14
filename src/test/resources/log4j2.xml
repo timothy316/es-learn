@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <properties>
+        <!-- 日志路径 -->
+        <property name="LOG_HOME">/logs</property>
+        <!-- INFO级别日志名称 -->
+        <property name="LOG_INFO_NAME">/waybill_log.log</property>
+        <property name="LOG_TRACE_INFO_NAME">/trace_log.log</property>
+        <!-- INFO级别备份日志名称 -->
+        <property name="BACKUP_INFO_NAME">waybill-%d{MM-dd-yyyy}-%i.log</property>
+        <!-- ERROR级别日志名称 -->
+        <property name="LOG_ERROR_NAME">/err.log</property>
+        <!-- ERROR级别备份日志名称-->
+        <property name="BACKUP_ERROR_NAME">waybill-err-%d{MM-dd-yyyy}-%i.log</property>
+        <!--安全日志名称-->
+        <property name="SECURITY_INFO_NAME">/security_log.log</property>
+        <!-- 安全备份日志名称 -->
+        <property name="BACKUP_SECURITY_NAME">security-%d{MM-dd-yyyy}-%i.log</property>
+    </properties>
+    <appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%p][%date{yyyy-MM-dd HH:mm:ss.SSS}]%msg[%thread]([%c:%line])%n"/>
+        </Console>
+
+    </appenders>
+    <Loggers>
+
+
+        <root level="debug">
+            <appenderRef ref="Console"/>
+        </root>
+
+    </Loggers>
+</configuration>
